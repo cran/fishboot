@@ -2,8 +2,8 @@ Package: fishboot
 Type: Package
 Title: Bootstrap-Based Methods for the Study of Fish Stocks and Aquatic
         Populations
-Version: 1.0.3
-Date: 2026-09-25
+Version: 1.0.4
+Date: 2026-10-05
 Authors@R: c(
   person("Ralf", "Schwamborn", 
     role = c("aut"), 
@@ -27,12 +27,13 @@ Authors@R: c(
 Description: A suite of bootstrap-based models and tools for analyzing fish 
   stocks and aquatic populations. Designed for ecologists and fisheries 
   scientists, it supports data from length-frequency distributions, 
-  tag-and-recapture studies, and hard structure readings (e.g., otoliths).
-  See Schwamborn et al., 2019 for background. The package includes functions for 
-  bootstrapped fitting of growth curves and plotting. 
+  tag-and-recapture studies, and hard structure readings (e.g., otoliths). See 
+  Schwamborn et al., 2019 <doi:10.1016/j.ecolmodel.2018.12.001> for background. 
+  The package includes functions for bootstrapped fitting of growth curves and 
+  plotting.
 Depends: R (>= 4.1.0)
 Imports: doParallel, parallel, foreach, grDevices, graphics, stats,
-        utils, ks, TropFishR, fishmethods
+        utils, ks, TropFishR, fishmethods, cli
 License: GPL-3
 BugReports: https://github.com/rschwamborn/fishboot/issues
 URL: https://github.com/rschwamborn/fishboot
@@ -40,7 +41,7 @@ Encoding: UTF-8
 LazyData: true
 Config/roxygen2/version: 8.1.0
 NeedsCompilation: no
-Packaged: 2026-09-25 13:52:13 UTC; afipdbl
+Packaged: 2026-10-05 15:30:59 UTC; afipdbl
 Author: Ralf Schwamborn [aut] (ORCID: <https://orcid.org/0000-0001-9150-8720>),
   Tobias K. Mildenberger [aut],
   Marc H. Taylor [aut],
@@ -49,4 +50,4 @@ Author: Ralf Schwamborn [aut] (ORCID: <https://orcid.org/0000-0001-9150-8720>),
     <https://orcid.org/0000-0002-7979-9710>)
 Maintainer: Wencheng Lau-Medrano <luis.laum@gmail.com>
 Repository: CRAN
-Date/Publication: 2026-09-28 14:50:15 UTC
+Date/Publication: 2026-10-05 19:50:36 UTC

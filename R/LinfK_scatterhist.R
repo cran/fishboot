@@ -201,8 +201,9 @@ get_LinfK <- function(x){
   # If there is not a defined way (function) to extract Linf and K variables,
   # return an error msg
   if(is.na(index)){
-    sprintf(fmt = "Internal funtion 'get_LinfK' do not know how to extract Linf or K from a '%s' object.",
-            class(x)) |> stop()
+    cli_abort(
+      "Internal funtion {.fn get_LinfK} do not know how to extract Linf or K from a {.code {class(x)}} object."
+    )
   }
 
   # Extracting data an coerce to data.frame
@@ -218,10 +219,11 @@ get_LinfK <- function(x){
   index <- complete.cases(out)
 
   if(sum(!index) > 0){
-    if(sum(!index) == nrow(out)) stop("All the rows contains NA values, imposible to work.")
+    if(sum(!index) == nrow(out)) cli_abort("It is imposible to work if all the rows contains NA values")
 
-    sprintf("There are %i rows with NA values, they were removed in order to continue.",
-            sum(!index)) |> warning()
+    cli_warn(
+      "There are {sum(!index))} rows with NA values, they were removed in order to continue."
+    )
   }
 
   out[index,]

@@ -131,7 +131,7 @@ dat <- list(age = rep(x = 1:7,each = 15),
                        rnorm(n = 15, mean = 57, sd = 3)))
 
 # Perform bootstrapped curve fitting with grolenage_boot
-res <- grolenage_boot(param = dat, nresamp = 70)
+res <- grolenage_boot(param = dat, nresamp = 70, seed = 18)
 
 # Plot scatter histograms of Linf and K
 LinfK_scatterhist(res = res)

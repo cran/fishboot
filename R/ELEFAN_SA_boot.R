@@ -139,7 +139,7 @@
 #' res <- ELEFAN_SA_boot(lfq = alba, MA = MA, seasonalised = FALSE,
 #'                       init_par = init_par, up_par = up_par, low_par = low_par,
 #'                       SA_time = SA_time, SA_temp = SA_temp,
-#'                       nresamp = nresamp)
+#'                       nresamp = nresamp, seed = 18)
 #'
 #' res
 ELEFAN_SA_boot <- function(lfq,
@@ -158,7 +158,7 @@ ELEFAN_SA_boot <- function(lfq,
 
   if(is.null(seed)) seed <- as.numeric(Sys.time())
 
-  if(!is.logical(parallel) && !is.integer(parallel)) stop("'parallel' must be logical or integer.")
+  if(!is.logical(parallel) && !is.integer(parallel)) cli_abort("{.code parallel} must be logical or integer.")
 
   no_cores <- if(isTRUE(parallel)) parallel::detectCores() - 2 else pmax(as.integer(parallel), 1)
 

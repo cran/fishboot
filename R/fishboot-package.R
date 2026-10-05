@@ -5,15 +5,19 @@
 "_PACKAGE"
 
 ## usethis namespace: start
+#' @importFrom cli cli_abort
+#' @importFrom cli cli_alert_danger
+#' @importFrom cli cli_text
+#' @importFrom cli cli_warn
 #' @importFrom doParallel registerDoParallel
-#' @importFrom parallel makeCluster stopCluster
-#' @importFrom foreach foreach "%dopar%"
-#' @importFrom grDevices colorRampPalette adjustcolor blues9 rgb dev.off
-#' @importFrom graphics par layout image points box hist rect contour abline legend lines text mtext polygon segments
-#' @importFrom stats runif cov quantile complete.cases setNames rnorm
-#' @importFrom utils modifyList stack
-#' @importFrom ks kde Hpi
-#' @importFrom TropFishR ELEFAN_SA ELEFAN_GA VBGF lfqRestructure growth_length_age
 #' @importFrom fishmethods grotag
+#' @importFrom foreach foreach "%dopar%"
+#' @importFrom graphics par layout image points box hist rect contour abline legend lines text mtext polygon segments
+#' @importFrom grDevices colorRampPalette adjustcolor blues9 rgb dev.off
+#' @importFrom ks kde Hpi
+#' @importFrom parallel makeCluster stopCluster
+#' @importFrom stats runif cov quantile complete.cases setNames rnorm
+#' @importFrom TropFishR ELEFAN_SA ELEFAN_GA VBGF lfqRestructure growth_length_age
+#' @importFrom utils modifyList stack
 ## usethis namespace: end
 NULL

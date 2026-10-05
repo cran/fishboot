@@ -150,7 +150,7 @@ nresamp  <- 2
 res <- ELEFAN_SA_boot(lfq = alba, MA = MA, seasonalised = FALSE,
                       init_par = init_par, up_par = up_par, low_par = low_par,
                       SA_time = SA_time, SA_temp = SA_temp,
-                      nresamp = nresamp)
+                      nresamp = nresamp, seed = 18)
 
 res
 }

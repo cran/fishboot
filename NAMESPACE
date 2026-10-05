@@ -15,6 +15,12 @@ importFrom(TropFishR,
   growth_length_age,
   lfqRestructure
 )
+importFrom(cli,
+  cli_abort,
+  cli_alert_danger,
+  cli_text,
+  cli_warn
+)
 importFrom(doParallel,registerDoParallel)
 importFrom(fishmethods,grotag)
 importFrom(foreach,

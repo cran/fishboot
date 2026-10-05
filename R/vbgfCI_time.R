@@ -55,12 +55,14 @@
 #'
 #' data(bonito_boot) # grotagBoot object
 #' LinfK_scatterhist(res = bonito_boot)
-vbgfCI_time <- function(res, CI = 95, agemax = NULL, plot = TRUE,
-                        add_legend = TRUE, add_max_dens_legend = TRUE,
-                        xlab = "Relative time", ylab = "Length",
-                        perm.col = adjustcolor("grey50",0.1), perm.lwd = 1,
-                        ci.col = "black", ci.lty = 2, ci.lwd = 1,
-                        maxd.col = "black", maxd.lty = 1, maxd.lwd = 2, ...){
+vbgfCI_time <- function(
+    res, CI = 95, agemax = NULL, plot = TRUE,
+    add_legend = TRUE, add_max_dens_legend = TRUE,
+    xlab = "Relative time", ylab = "Length",
+    perm.col = adjustcolor("grey50",0.1), perm.lwd = 1,
+    ci.col = "black", ci.lty = 2, ci.lwd = 1,
+    maxd.col = "black", maxd.lty = 1, maxd.lwd = 2, ...
+){
 
   # Extract values of Linf, K and t_anchor from res
   x <- get_LinfKtanchor(x = res)
@@ -216,8 +218,10 @@ get_LinfKtanchor <- function(x){
   # If there is not a defined way (function) to extract Linf, K and t_anchor
   # variables, return an error msg
   if(is.na(index)){
-    sprintf(fmt = "Internal funtion 'get_LinfKtanchor' do not know how to extract Linf or K from a '%s' object.",
-            class(x)) |> stop()
+
+    cli_abort(
+      "Internal funtion {.code get_LinfKtanchor} do not know how to extract Linf or K from a {class(x)} object."
+    )
   }
 
   # Extracting data an coerce to data.frame

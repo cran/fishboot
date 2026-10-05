@@ -152,7 +152,7 @@ res <- ELEFAN_GA_boot(lfq = alba, MA = MA, seasonalised = FALSE,
                       up_par = up_par, low_par = low_par,
                       parallel = FALSE,
                       popSize = popSize, maxiter = maxiter,
-                      run = run, pmutation = pmutation,
+                      run = run, pmutation = pmutation, seed = 18,
                       nresamp = nresamp)
 
 res

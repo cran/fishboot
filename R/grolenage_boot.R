@@ -127,7 +127,7 @@
 #'                        rnorm(n = 15, mean = 57, sd = 3)))
 #'
 #' # Perform bootstrapped curve fitting with grolenage_boot
-#' res <- grolenage_boot(param = dat, nresamp = 70)
+#' res <- grolenage_boot(param = dat, nresamp = 70, seed = 18)
 #'
 #' # Plot scatter histograms of Linf and K
 #' LinfK_scatterhist(res = res)
@@ -155,8 +155,14 @@ grolenage_boot <- function(param, method = "LSM",
     gsub(pattern = "[[:punct:]]", replacement = "")
 
   # Check nan_action value and send an error message if correspond
-  if(!nan_action %in% c("nothing", "narm", "nanrm", "force")){
-    stop("'nan_action' value must be whether 'nothing', 'nanrm', 'narm' or 'force'. See ?grolenage_boot")
+  navals <- c("nothing", "narm", "nanrm", "force")
+  if(!nan_action %in% navals){
+    cli_abort(
+      c(
+        "{.code nan_action} value must be whether {.or {.str {navals}}}.",
+        "i" = "See {.help grolenage_boot}"
+      )
+    )
   }
 
   # Coerce param to a list
